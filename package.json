@@ -1,0 +1,50 @@
+{
+  "name": "stms-sample",
+  "version": "1.0.0",
+  "description": "stms-sample",
+  "main": "index.ts",
+  "scripts": {
+    "clean:dev": "rimraf .tmp",
+    "clean:prd": "rimraf public",
+    "start": "npm run clean:dev && webpack-dev-server --mode development",
+    "build": "npm run clean:prd && webpack --mode production",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "''"
+  },
+  "author": "Maksym Goncharov",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/angular": "^1.6.43",
+    "@types/angular-ui-router": "^1.1.40",
+    "@types/core-js": "^0.9.46",
+    "@types/node": "^9.6.0",
+    "@types/webpack-env": "^1.13.5",
+    "awesome-typescript-loader": "^4.0.1",
+    "core-js": "^2.5.3",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.1.0",
+    "http-server": "^0.11.1",
+    "ng-annotate-loader": "^0.6.1",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.20.3",
+    "tslint": "^5.9.1",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^2.7.2",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2",
+    "yargs": "^11.0.0"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "1.6.9"
+  }
+}
