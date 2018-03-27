@@ -13,4 +13,4 @@ export const moduleName =
         componentsModule,
         apiModule,
         servicesModule
-    ]).name;
+    ]).name

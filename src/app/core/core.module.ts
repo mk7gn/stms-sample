@@ -1,4 +1,4 @@
-import * as angular from 'angular';
+import * as angular from 'angular'
 
 import { coreConfig } from './core.config'
 
@@ -7,4 +7,4 @@ export const moduleName =
         'ui.router'
     ])
         .config(coreConfig)
-        .name;
+        .name
