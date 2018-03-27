@@ -1,7 +1,7 @@
 import './polyfills'
 import './vendors'
 
-import './index.less'
+// import './index.less'
 
 import * as angular from 'angular'
 

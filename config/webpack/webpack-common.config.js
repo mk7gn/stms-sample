@@ -38,11 +38,11 @@ module.exports = {
             },
 
             {
-                test: /\.scss$/,
+                test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
-                    publicPath: '../'
+                    use: ['css-loader', 'less-loader'],
+                    publicPath: './'
                 })
             },
 
@@ -59,7 +59,7 @@ module.exports = {
             {
                 test: /.html$/,
                 exclude: /index.html$/,
-                use: 'html-loader'
+                use: 'file-loader?name=templates/[hash].[ext]!extract-loader!html-loader'
             }
         ]
     },
