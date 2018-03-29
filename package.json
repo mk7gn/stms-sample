@@ -45,7 +45,9 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
+    "@types/angular-local-storage": "^0.6.0",
     "@uirouter/angularjs": "^1.0.15",
-    "angular": "1.6.9"
+    "angular": "1.6.9",
+    "angular-local-storage": "^0.7.1"
   }
 }
