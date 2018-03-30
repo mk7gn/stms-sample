@@ -1,2 +1,26 @@
-<sign-out></sign-out>
-<h1>hello from welcome</h1>
+<div class="welcome">
+    <nav>
+        <ul class="welcome-navbar">
+            <li class="welcome-navbar__item">
+                logo
+            </li>
+            <li class="welcome-navbar__item">
+                <sign-out></sign-out>
+            </li>
+        </ul>
+    </nav>
+    <div class="welcome-title">
+        <h1 class="welcome-title__label">
+            <span>Welcome</span>
+            <span ng-bind="vm.user.username"></span>
+        </h1>
+    </div>
+    <div class="welcome-content">
+        <div class="welcome-content__image">
+            <h2>Image</h2>
+        </div>
+        <div class="welcome-content__name">
+            <h2 ng-bind="vm.user.username"></h2>
+        </div>
+    </div>
+</div>

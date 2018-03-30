@@ -1,5 +1,5 @@
-export const coreConfig = ($locationProvider: angular.ILocationProvider,
-                           $urlRouterProvider: angular.ui.IUrlRouterProvider,
+export const coreConfig = ($locationProvider: ng.ILocationProvider,
+                           $urlRouterProvider: ng.ui.IUrlRouterProvider,
                            localStorageServiceProvider: any) => {
     'ngInject'
     $locationProvider.hashPrefix('')

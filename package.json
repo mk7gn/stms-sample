@@ -22,6 +22,7 @@
     "@types/core-js": "^0.9.46",
     "@types/node": "^9.6.0",
     "@types/webpack-env": "^1.13.5",
+    "@types/angular-local-storage": "^0.6.0",
     "awesome-typescript-loader": "^5.0.0-1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.11",
@@ -45,7 +46,6 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
-    "@types/angular-local-storage": "^0.6.0",
     "@uirouter/angularjs": "^1.0.15",
     "angular": "1.6.9",
     "angular-local-storage": "^0.7.1"

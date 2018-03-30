@@ -10,7 +10,7 @@ export class SignInController {
         'ngInject'
     }
     public signIn () {
-        this.userService.SignIn(this.user)
+        this.userService.signIn(this.user)
             .then(response => this.$state.go('welcome'))
             .catch(err => console.log(err))
     }

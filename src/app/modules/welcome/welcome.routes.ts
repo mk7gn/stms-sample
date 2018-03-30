@@ -1,4 +1,4 @@
-export const welcomeRoute = ($stateProvider: angular.ui.IStateProvider) => {
+export const welcomeRoute = ($stateProvider: ng.ui.IStateProvider) => {
     'ngInject'
     $stateProvider
         .state('welcome', {
