@@ -1,5 +1,5 @@
 install dependencies - npm i || yarn
 
-tasks:
-    npm start
-    npm build
+ run localhost - npm start
+
+ open browser at http://localhost:8080

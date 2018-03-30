@@ -20,8 +20,8 @@ export class UserService {
             .catch(err => this.localStorageService.remove('user'))
     }
 
-    public isUserAuth () {
-        const user = this.localStorageService.get('user')
+    public isAuthenticated () {
+        const user: boolean = this.localStorageService.get('user')
         return !!user
     }
 
