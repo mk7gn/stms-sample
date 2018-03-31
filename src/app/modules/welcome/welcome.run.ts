@@ -1,16 +1,16 @@
-import {UserService} from '../../api/user/user.service'
+import {AuthService} from '../../api/auth/auth.service'
 
 export default function welcomeRun(
     $transitions: any,
     $state: ng.ui.IStateService,
-    userService: UserService
+    authService: AuthService
 ): void {
     'ngInject'
 
     $transitions.onBefore({
         to: 'welcome'
     }, (transition: any) => {
-        if (!userService.isAuthenticated()) {
+        if (!authService.isAuthenticated()) {
             return transition.router.stateService.target('auth')
         }
     })

@@ -1,12 +1,12 @@
-import {UserService} from '../../api/user/user.service'
+import {AuthService} from '../../api/auth/auth.service'
 
 export class SignOutController {
     constructor (
         private $state: ng.ui.IStateService,
-        private userService: UserService
+        private authService: AuthService
     ) {}
     public signOut (): void {
-        this.userService.
+        this.authService.
         signOut()
             .then(response => this.$state.go('auth'))
             .catch(err => console.log(err))
