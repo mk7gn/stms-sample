@@ -2,21 +2,25 @@ import {UserService} from '../../api/user/user.service'
 
 export class WelcomeController {
     public user: any
+    public positions: any
     constructor (
         private $state: ng.ui.IStateService,
         private userService: UserService
     ) {
         'ngInclude'
+        this.positions = []
     }
+
 
     $onInit() {
         this.getUser()
     }
-    public signOut () {
-        this.userService.
-        signOut()
-            .then(response => this.$state.go('auth'))
-            .catch(err => console.log(err))
+
+    public onDrop (data: any, event: any) {
+        let ds = data
+        let dfsdffsd = event
+        console.log(this.positions)
+        debugger
     }
 
     private getUser () {

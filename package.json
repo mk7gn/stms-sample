@@ -18,11 +18,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/angular": "^1.6.43",
+    "@types/angular-local-storage": "^0.6.0",
     "@types/angular-ui-router": "^1.1.40",
     "@types/core-js": "^0.9.46",
+    "@types/jquery": "^3.3.1",
     "@types/node": "^9.6.0",
     "@types/webpack-env": "^1.13.5",
-    "@types/angular-local-storage": "^0.6.0",
+    "angular-dragdrop": "^1.0.13",
     "awesome-typescript-loader": "^5.0.0-1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.11",
@@ -48,6 +50,7 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.15",
     "angular": "1.6.9",
-    "angular-local-storage": "^0.7.1"
+    "angular-local-storage": "^0.7.1",
+    "jquery": "^3.3.1"
   }
 }
