@@ -11,7 +11,8 @@ export class UserInfoComponent implements ng.IComponentOptions {
         this.controllerAs = 'vm'
         this.templateUrl = require('./userInfo.html')
         this.bindings = {
-            user: '<'
+            user: '<',
+            position: '<'
         }
     }
 }
