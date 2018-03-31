@@ -1,15 +1,15 @@
 import {UserService} from '../../api/user/user.service'
-import {IUserRequestData} from '../../models/user.model'
+import {IUser, ISignInData} from '../../models/main.model'
 
 export class SignInController {
-    public user: IUserRequestData
+    public user: ISignInData
     constructor (
         private $state: ng.ui.IStateService,
         private userService: UserService
     ) {
         'ngInject'
     }
-    public signIn () {
+    public signIn (): void {
         this.userService.signIn(this.user)
             .then(response => this.$state.go('welcome'))
             .catch(err => console.log(err))

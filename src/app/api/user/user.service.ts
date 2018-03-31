@@ -1,4 +1,5 @@
-import {IUserRequestData, IUserResponse} from '../../models/user.model'
+import {IUser, ISignInData, IPosition} from '../../models/main.model'
+import {defaultPosition} from '../../mock/positions.mock'
 
 export class UserService {
     constructor (
@@ -8,10 +9,16 @@ export class UserService {
         'ngInject'
     }
 
-    public signIn(user: IUserRequestData): ng.IPromise<any> {
+    public signIn(user: ISignInData): ng.IPromise<any> {
         return this.$http.post(`path/signIn`, user)
             .then(res => console.log(res))
-            .catch(err => this.localStorageService.set('user', user))
+            .catch(err => {
+                let data: IUser = {
+                    username: user.username,
+                    image: '/images/userImage.png'
+                }
+                this.localStorageService.set('user', data)
+            })
     }
 
     public signOut(): ng.IPromise<any> {
@@ -20,41 +27,30 @@ export class UserService {
             .catch(err => this.localStorageService.remove('user'))
     }
 
-    public isAuthenticated () {
+    public isAuthenticated (): boolean {
         const user: boolean = this.localStorageService.get('user')
         return !!user
     }
 
-    public getUser(): ng.IPromise<any> {
+    public getUser(): ng.IPromise<void | IUser> {
         return this.$http.get(`path/user`)
             .then(res => console.log(res))
             .catch(err => this.localStorageService.get('user'))
     }
 
-    public getPositions(username: string): ng.IPromise<any> {
+    public getPositions(username: string): ng.IPromise<IPosition> {
         return this.$http.get(`path/positions`)
             .then(res => console.log(res))
             .catch(err => {
-                const defaultPositions = {
-                    image: {
-                        x: 0,
-                        y: 0
-                    },
-                    name: {
-                        x: 0,
-                        y: 0
-                    }
-                }
                 const list: any = this.localStorageService.get('positionList')
-                return list && list[username] ? list[username] : defaultPositions
+                return list && list[username] ? list[username] : defaultPosition
             })
     }
 
-    public updatePositions(data: any): any {
+    public updatePositions(data: IPosition): ng.IPromise<any> {
         return this.$http.post(`path/position-list`, data)
         .then(res => console.log(res))
         .catch(err => {
-            debugger
             const positionList: any = this.localStorageService.get('positionList') || {}
             positionList[data.username] = data
             this.localStorageService.set('positionList', {...positionList})

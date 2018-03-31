@@ -5,7 +5,7 @@ export class SignOutController {
         private $state: ng.ui.IStateService,
         private userService: UserService
     ) {}
-    public signOut () {
+    public signOut (): void {
         this.userService.
         signOut()
             .then(response => this.$state.go('auth'))

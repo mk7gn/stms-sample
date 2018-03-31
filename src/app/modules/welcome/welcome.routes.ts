@@ -1,5 +1,5 @@
 import {UserService} from '../../api/user/user.service'
-import {IUserResponse} from '../../models/user.model'
+import {IUser} from '../../models/main.model'
 export const welcomeRoute = ($stateProvider: ng.ui.IStateProvider) => {
     'ngInject'
     $stateProvider
@@ -7,7 +7,7 @@ export const welcomeRoute = ($stateProvider: ng.ui.IStateProvider) => {
             url: '/welcome',
             component: 'welcomeComponent',
             resolve : {
-                user: (userService: UserService): ng.IPromise<IUserResponse> => userService.getUser()
+                user: (userService: UserService): ng.IPromise<void | IUser> => userService.getUser()
             }
         })
 }
