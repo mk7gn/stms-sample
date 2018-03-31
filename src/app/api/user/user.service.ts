@@ -31,21 +31,33 @@ export class UserService {
             .catch(err => this.localStorageService.get('user'))
     }
 
-    public getPositionList(): ng.IPromise<any> {
-        return this.$http.get(`path/position-list`)
+    public getPositions(username: string): ng.IPromise<any> {
+        return this.$http.get(`path/positions`)
             .then(res => console.log(res))
-            .catch(err => this.localStorageService.get('positionList'))
+            .catch(err => {
+                const defaultPositions = {
+                    image: {
+                        x: 0,
+                        y: 0
+                    },
+                    name: {
+                        x: 0,
+                        y: 0
+                    }
+                }
+                const list: any = this.localStorageService.get('positionList')
+                return list && list[username] ? list[username] : defaultPositions
+            })
     }
 
-    public updatePositionList(position: any): any {
-        return this.$http.post(`path/position-list`, position)
+    public updatePositions(data: any): any {
+        return this.$http.post(`path/position-list`, data)
         .then(res => console.log(res))
         .catch(err => {
-            const positionList = this.localStorageService.get('positionList') || []
-            this.localStorageService.set('positionList', {
-                ...positionList,
-                position
-            })
+            debugger
+            const positionList: any = this.localStorageService.get('positionList') || {}
+            positionList[data.username] = data
+            this.localStorageService.set('positionList', {...positionList})
         })
     }
 }

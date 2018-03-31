@@ -5,6 +5,7 @@ import {moduleName as modulesModule} from './modules/modules.module'
 import {moduleName as componentsModule} from './components/components.module'
 import {moduleName as apiModule} from './api/api.module'
 import {moduleName as servicesModule} from './services/services.module'
+import {moduleName as directivesModule} from './directives/directives.module'
 
 export const moduleName =
     angular.module('application', [
@@ -12,5 +13,6 @@ export const moduleName =
         modulesModule,
         componentsModule,
         apiModule,
-        servicesModule
+        servicesModule,
+        directivesModule
     ]).name

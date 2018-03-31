@@ -15,7 +15,8 @@
       "core-js",
       "angular-ui-router",
       "angular-local-storage",
-      "jquery"
+      "jquery",
+      "lodash"
     ]
   }
 }

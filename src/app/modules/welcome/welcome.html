@@ -2,11 +2,10 @@
     <navbar></navbar>
     <div class="welcome-title">
         <h1 class="welcome-title__label">
-            <span>Welcome</span>
-            <span ng-bind="vm.user.username"></span>
+            <span ng-bind="'Welcome ' + vm.user.username"></span>
         </h1>
     </div>
     <div class="welcome-user">
-        <user-info user="vm.user" position="vm.userPositions"></user-info>
+        <user-info user="vm.user"></user-info>
     </div>
 </div>
