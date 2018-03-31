@@ -1,0 +1,38 @@
+.sign-in {
+  margin: 0 auto;
+  padding: 10px 30px;
+  width: 300px;
+  height: 200px;
+  background-color: purple;
+  &__title{
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+  }
+  &__input {
+    display: block;
+    background-color: fadeout(#000, 80%);
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    
+    &::-webkit-input-placeholder {
+      color: #ccc;
+    }
+  }
+
+  &__button {
+    display: block;
+    background-color: #2d2aff;
+    border: 1px solid #1C00FF;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+  }
+}

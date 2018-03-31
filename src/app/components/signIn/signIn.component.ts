@@ -1,4 +1,5 @@
 import {SignInController} from './signIn.controller'
+import './signIn.less'
 
 export class SignInComponent implements ng.IComponentOptions {
     public controller: ng.IControllerConstructor
