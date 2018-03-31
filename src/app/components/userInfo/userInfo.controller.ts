@@ -1,4 +1,6 @@
+import * as $ from 'jquery'
 import {UserService} from '../../api/user/user.service'
+import * as _ from 'lodash'
 
 export class UserInfoController {
     public user: any
@@ -29,11 +31,27 @@ export class UserInfoController {
 
     private getUserPositions(name: string) {
         return this.userService.getPositions(name)
-            .then(res => this.positions = res)
+            .then(res => {
+                this.positions = res
+                this.setItemPositions(this.positions)
+                debugger
+            })
             .catch(err => console.log(err))
     }
 
     private updateUserPositions (data: any) {
         return this.userService.updatePositions(data)
+    }
+
+    private setItemPositions(pos: any) {
+        _.forOwn(pos, (value, key) => {
+            let elem: any = $(`#${key}`)
+            elem.css ({
+                position: 'absolute',
+                cursor: 'pointer',
+                top: value.y + 'px',
+                left: value.x + 'px'
+            })
+        })
     }
 }
