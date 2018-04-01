@@ -1,4 +1,3 @@
-import * as $ from 'jquery'
 import * as _ from 'lodash'
 import {UserService} from '../../api/user/user.service'
 import {IUser, IPosition} from '../../models/main.model'
@@ -20,7 +19,6 @@ export class UserInfoController {
         const id: (keyof IPosition) = data.target.id
         const {top, left} = event.offset
         const {username} = this.user
-        debugger
         this.positions[id] = {
             x: Math.round(left),
             y: Math.round(top)
