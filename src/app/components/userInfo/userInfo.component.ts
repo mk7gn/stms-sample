@@ -1,3 +1,4 @@
+import './userInfo.less'
 import {UserInfoController} from './userInfo.controller'
 
 export class UserInfoComponent implements ng.IComponentOptions {

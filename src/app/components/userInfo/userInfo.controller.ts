@@ -34,13 +34,14 @@ export class UserInfoController {
         this.userService.getPositions(name)
             .then(res => {
                 this.positions = res
-                this.setItemPositions(this.positions)
+                if (this.positions.username) {this.setItemPositions(this.positions)}
             })
             .catch(err => console.log(err))
     }
 
     private updateUserPositions (data: any): void {
         this.userService.updatePositions(data)
+        this.positions = data
     }
 
     private setItemPositions(pos: any): void {
@@ -48,7 +49,6 @@ export class UserInfoController {
             let elem: any = $(`#${key}`)
             elem.css ({
                 position: 'absolute',
-                cursor: 'pointer',
                 top: value.y + 'px',
                 left: value.x + 'px'
             })

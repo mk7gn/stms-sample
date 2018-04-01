@@ -1,3 +1,5 @@
+import './auth.less'
+
 export class AuthComponent implements ng.IComponentOptions {
     public templateUrl: string
     public controllerAs: string

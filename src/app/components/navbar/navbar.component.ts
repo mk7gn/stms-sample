@@ -1,3 +1,4 @@
+import './navbar.less'
 export class NavbarComponent implements ng.IComponentOptions {
     public controllerAs: string
     public templateUrl: string

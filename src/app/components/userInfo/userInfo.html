@@ -1,10 +1,12 @@
 <div class="user-info">
     <div data-drag="true" jqyoui-draggable="{onStop :'vm.onDrop(data, event)', animate:true}"
-         class="user-info__image"  id="image">
-        <img ng-src="{{vm.user.image}}" alt="user">
+         set-position
+         class="user-info__item user-info__item_picture"  id="image">
+        <img class="user-info__image" ng-src="{{vm.user.image}}" alt="user">
     </div>
     <div data-drag="true" jqyoui-draggable="{onStop :'vm.onDrop(data, event)', animate:true}"
-         class="user-info__name" id="name">
-        <h2 ng-bind="vm.user.username"></h2>
+         set-position
+         class="user-info__item" id="name">
+        <h2 class="user-info__name" ng-bind="vm.user.username"></h2>
     </div>
 </div>

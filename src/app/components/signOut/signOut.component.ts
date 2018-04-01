@@ -1,3 +1,4 @@
+import './signOut.less'
 import {SignOutController} from './signOut.controller'
 
 export class SignOutComponent implements ng.IComponentOptions {
