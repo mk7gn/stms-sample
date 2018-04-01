@@ -18,11 +18,12 @@ export class UserInfoController {
 
     public onDrop (data: any, event: any): void {
         const id: (keyof IPosition) = data.target.id
-        const {top, left} = event.position
+        const {top, left} = event.offset
         const {username} = this.user
+        debugger
         this.positions[id] = {
-            x: left,
-            y: top
+            x: Math.round(left),
+            y: Math.round(top)
         }
         this.updateUserPositions({
             username,
